@@ -1,4 +1,5 @@
 using backend_api_dotnet.Estudents;
+using backend_api_dotnet.Students;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,9 +17,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-//app.MapGet("Hello-word", handler: () => "Hello world!");
-
-EstudentsRoutes.AddEstudentsRoutes(app);
+// Configurando as rotas
+app.AddStudentsRoutes();
 
 app.Run();
 
