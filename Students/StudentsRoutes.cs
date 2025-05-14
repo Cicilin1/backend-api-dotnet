@@ -1,4 +1,5 @@
 ﻿using backend_api_dotnet.Estudents;
+using backend_api_dotnet.Students;
 
 namespace backend_api_dotnet.Students
 {
