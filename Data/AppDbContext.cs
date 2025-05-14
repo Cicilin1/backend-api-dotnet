@@ -6,7 +6,7 @@ namespace backend_api_dotnet.Data
 {
     public class AppDbContext : DbContext
     {
-        private DbSet<Student> TableStudent { get; set; }
+        public DbSet<Student> TableStudent { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

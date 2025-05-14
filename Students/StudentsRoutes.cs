@@ -1,5 +1,6 @@
 ﻿using backend_api_dotnet.Estudents;
 using backend_api_dotnet.Students;
+using backend_api_dotnet.Data;
 
 namespace backend_api_dotnet.Students
 {
@@ -7,8 +8,16 @@ namespace backend_api_dotnet.Students
     {
         public static void AddStudentsRoutes(this WebApplication app)
         {
-            app.MapGet("students", 
-                handler: () => new Student("Cicilini"));
+            var routesStudents = app.MapGroup(prefix: "student");
+
+            routesStudents.MapPost("",
+                async (AddStudentRequest request, AppDbContext context ) => 
+            {
+                var newStudent = new Student(request.Name);
+
+                await context.TableStudent.AddAsync(newStudent);
+                await context.SaveChangesAsync();   
+            });
         }
     }
 }
