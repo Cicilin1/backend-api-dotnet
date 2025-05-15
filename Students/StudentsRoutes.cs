@@ -12,15 +12,13 @@ namespace backend_api_dotnet.Students
             var routesStudents = app.MapGroup(prefix: "student");
 
             routesStudents.MapPost("",
-                async (AddStudentRequest request, AppDbContext context ) => 
+                async (AddStudentRequest request, AppDbContext context) => 
             {
 
                 var IsExist = await context.TableStudent.AnyAsync(Student => Student.Name == request.Name);
 
                 if (IsExist)
                     return Results.Conflict(error: "Esse nome já existe!");
-
-                    
 
                 var newStudent = new Student(request.Name);
 
@@ -29,6 +27,14 @@ namespace backend_api_dotnet.Students
                 
                 return Results.Ok(newStudent); 
             });
+
+            routesStudents.MapGet("",
+                async (AppDbContext context) =>
+                {
+                    var students = await context.TableStudent.Where(TableStudent => TableStudent.IsActive).ToListAsync();
+                    return students;
+                });
+
         }
     }
 }
