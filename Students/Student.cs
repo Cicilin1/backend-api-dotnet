@@ -13,6 +13,11 @@
             IsActive = true;
 
         }
+
+        public void UpdateName(string name)
+        {
+            Name = name;
+        }
     }
 }
  
