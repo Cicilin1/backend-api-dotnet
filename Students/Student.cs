@@ -18,6 +18,12 @@
         {
             Name = name;
         }
+
+
+        public void Desative()
+        {
+            IsActive = false;    
+        }
     }
 }
  
