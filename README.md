@@ -16,7 +16,9 @@ Uma API REST simples feita com ASP.NET Core para realizar operações de **CREAT
 ### Pré-requisitos
 
 - .NET SDK instalado (recomendo a versão 7.0 ou superior)
-- SQL Server ou outro banco de dados relacional
+- Entity Framework Core
+- SQLite
+- Swagger
 
 ### Passos para executar:
 
