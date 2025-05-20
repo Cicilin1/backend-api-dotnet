@@ -41,7 +41,7 @@ dotnet run
 
 - **POST**    "/student" – Cria um novo estudante se o nome ainda não existir.
 - **GET**     "/student" – Retorna a lista de estudantes ativos.
-- **PUT**     "/student/{id:guid}" – Atualiza o nome de um estudante pelo ID.
+- **PUT**     "/student/{id}" – Atualiza o nome de um estudante pelo ID.
 - **DELETE**  "/student/{id}" – Desativa (não remove) um estudante pelo ID.
 
 
